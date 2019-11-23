@@ -81,7 +81,7 @@ public class UserService {
 			if (!system2Users.contains(user)) {
 				// find if ID exists
 				final User idMatchUser = system2Users.stream()
-				  .filter(user2 -> user.getId().equals(user.getId()))
+				  .filter(user2 -> user.getId().equals(user2.getId()))
 				  .findAny()
 				  .orElse(null);
 				if (idMatchUser == null) {
@@ -99,7 +99,7 @@ public class UserService {
 		LOGGER.info("SYSTEM2_USER_ID, SYSTEM2_DISPLAYNAME");
 		system2Users.forEach(user->{
 			final User idMatchUser = system1Users.stream()
-			  .filter(user2 -> user.getId().equals(user.getId()))
+			  .filter(user2 -> user.getId().equals(user2.getId()))
 			  .findAny()
 			  .orElse(null);
 			if (idMatchUser == null) {
